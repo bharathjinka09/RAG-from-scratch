@@ -14,7 +14,7 @@ def embed(texts):
 
 def ask_llm(prompt):
     r = requests.post(f"{OLLAMA}/api/chat", json={
-        "model": CHAT_MODEL, "stream": True,
+        "model": CHAT_MODEL, "stream": False,
         "messages": [{"role": "user", "content": prompt}],
     })
     return r.json()["message"]["content"]
